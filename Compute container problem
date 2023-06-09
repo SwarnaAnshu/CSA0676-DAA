@@ -1,0 +1,33 @@
+// C# code for Max
+// Water Container
+using System;
+class GFG
+{
+ 
+public static int maxArea(int[] a)
+{
+ 
+    int Area = 0;
+     
+    for(int i = 0; i < a.Length; i++)
+    {
+        for(int j = i + 1; j < a.Length; j++)
+        {
+            Area = Math.Max(Area, Math.Min(a[i], a[j]) *
+                            (j - i));
+        }
+    }
+    return Area;
+}
+ 
+// Driver code
+public static void Main(String[] args)
+{
+    int []a = { 1, 5, 4, 3 };
+    int []b = { 3, 1, 2, 4, 5 };
+ 
+    Console.WriteLine(maxArea(a));
+    Console.Write(maxArea(b));
+}
+}
+ 
