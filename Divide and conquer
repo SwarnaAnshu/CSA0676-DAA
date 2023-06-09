@@ -1,0 +1,24 @@
+
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+ 
+// Divide and conquer solution to find the minimum and maximum number in an array
+void findMinAndMax(vector<int> const &nums, int low, int high, int &min, int &max)
+{
+    // if the array contains only one element
+ 
+    if (low == high)                    // common comparison
+    {
+        if (max < nums[low]) {           // comparison 1
+            max = nums[low];
+        }
+ 
+        if (min > nums[high]) {          // comparison 2
+            min = nums[high];
+        }
+ 
+        return;
+    }
+ 
